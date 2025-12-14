@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreeram | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <div class="container">
+        <video class="back-vid" autoplay loop muted playsinline>
+            <source src="videos/galaxy.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+        <div class="pfp-img">
+            <img src="images/pfp.jpg" alt="Shreeram">
+        </div>
+
+        <div class="home-content">
+            <h1>Hello there! I'm <span>Shreeram</span></h1>
+            <h3 class="typing-text">I'm <span id="typing"></span></h3>
+
+            <p>
+                <strong>Python Programmer | C Learner | Tech Enthusiast</strong>
+                
+                <br><br>
+                I enjoy coding in Python and am currently learning C to deepen my
+                programming fundamentals. My interests extend beyond technology
+                into geopolitics, Indian foreign policy, and national defense.
+                A swimmer by passion, I value discipline, consistency, and
+                continuous learning.
+            </p>
+        <br/>
+            <div class="social">
+                <a href="https://github.com/kinetic-conflict"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shreeramta/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/_.isreee._/"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:shreeram.ta2025@vitstudent.ac.in">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>PowerPoint (PPT)</li>
+            <li>MS Word</li>
+            <li>Graphic Design</li>
+        </ul>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>Kendriya Vidyalaya Janakpuri, New Delhi</li>
+            <li>VIT University, Vellore</li>
+        </ul>
+    </section>
+
+    <!-- Hobbies -->
+    <section class="section" id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Swimming (Qualified for Nationals – Delhi Region)</li>
+            <li>Geopolitics & National Defense</li>
+            <li>Photography</li>
+            <li>Cooking</li>
+        </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>
+            <i class="fas fa-envelope"></i>
+            shreeram.ta2025@vitstudent.ac.in
+        </p>
+    </section>
+
+    <!-- Typing Animation -->
+    <script>
+        const texts = ["a Python Programmer", "a C Learner", "a Tech Enthusiast"];
+        let index = 0, charIndex = 0;
+        const typing = document.getElementById("typing");
+
+        function type() {
+            if (charIndex < texts[index].length) {
+                typing.textContent += texts[index].charAt(charIndex++);
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typing.textContent = texts[index].substring(0, --charIndex);
+                setTimeout(erase, 50);
+            } else {
+                index = (index + 1) % texts.length;
+                setTimeout(type, 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", type);
+    
+     const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>
