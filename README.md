@@ -33,7 +33,7 @@ portfolio/
 
 ## 🔗 Links
 - GitHub: [https://github.com/kinetic-conflict](https://github.com/kinetic-conflict)  
-- LinkedIn: [https://www.linkedin.com/in/shreeramta/](https://www.linkedin.com/in/shreeramta/)  
-- Instagram: [https://www.instagram.com/_.isreee._/](https://www.instagram.com/_.isreee._/)  
-- Email: shreeram.ta2025@vitstudent.ac.in  
+- LinkedIn: 
+- Instagram:
+- Email:  
 
